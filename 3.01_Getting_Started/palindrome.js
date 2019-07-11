@@ -1,6 +1,6 @@
 
 function checkIfPalindrome (phrase) {
-
+    
     // we take the string 
         //we have done that = cool!
     //we make it lowercase or uppercase
@@ -13,8 +13,12 @@ function checkIfPalindrome (phrase) {
 }
 
 function transformToLowerCase(str) {
-    let lc = str.toLowerCase();
-    return lc;
+    if (isNaN(str)) {
+        let lc = str.toLowerCase();
+        return lc;
+    }
+    else 
+    console.log(`${str} is a number. Please change you input`)
 }
 
 function reversePhrase(sent) {
@@ -44,4 +48,4 @@ checkIfPalindrome('level'); // Return true
 checkIfPalindrome('mAdaM'); //Return true, but send a message that complains about the input
 checkIfPalindrome('babylon'); // Return false
 checkIfPalindrome('i level madam level i') // Return true
-// checkIfPalindrome(33445);
+checkIfPalindrome(3434234);
