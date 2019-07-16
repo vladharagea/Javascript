@@ -13,6 +13,8 @@ console.log('1.==================================');
 
  function fullName (firstName, lastName)
     {
+        // return firstName + ' ' + lastName
+
         console.log (`${firstName} ${lastName}`);
     };
 
@@ -42,9 +44,8 @@ console.log('1.==================================');
  
 function onlyOddsDividableByFifteen(num=100){
 for (let i=0;i<=num; i++){
-    if (i%2 !==0 && i%15 == 0){
+    if (i%2 !==0 && i%15 == 0)
        console.log(i);    
-   }
 }
 };
 
@@ -63,4 +64,6 @@ function thirdTriangleSide(a,b) {
 }
 
 thirdTriangleSide(2,3);
+
+//4.
 
