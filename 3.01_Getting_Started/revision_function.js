@@ -373,12 +373,15 @@ function matrix(x) {
     for (var i = 0; i < x; i++) {
         arr = '';
         for (var j = 0; j < x; j++){
-         if(i==j) {
-             arr += '1';
-         } 
-         if(i!==j) {
-             arr += '0';
-         }
+        // ======================== 
+        // if(i==j) {
+        //      arr += '1';
+        //  } 
+        //  if(i!==j) {
+        //      arr += '0';
+        //  }
+        //======================
+        i==j ? arr+='1' : arr+='0';
     }
     console.log(arr);
 }
