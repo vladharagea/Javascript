@@ -269,21 +269,56 @@ console.log('===================================================================
 // * The . and the @ must be in the appropriate places.
 // * e.g. "john.smith@com" is invalid while "john.smith@email.com" is valid.
 
-function validEmail(str) {
-    var monkeytail = '@';
-    var point = '.'
-    str = str.toLowerCase();
-    var emailcount = 0
-    for (i = 0; i < str.length; i++);{
-    if(typeof str !='string'){
-        console.log('Email invalid')
-    }
-}
-    
-}
+// function validEmail(email) {
+//       let monkeytail = '@';
+//       let dot= '.';
+      
+//       for(i=0; i<email.length; i++){
+//                 if(email.includes(monkeytail) && 
+//                     email.includes(dot) && 
+//                     email.indexOf(monkeytail) != 0 && 
+//                     email.indexOf(monkeytail) < email.lastIndexOf(dot) + 1)
+//                     return `${email} is valid`;
+//                 else 
+//                     return `${email} is invalid`; 
+//       }
+// }
 
-// john@example.com  TRUE
-// @example.com      FALSE
-// john.smith@com    FALSE
-// john.smith@email.com TRUE
-validEmail('john.smith@com')
+// console.log(validEmail('john@example.com'))  //TRUE
+// console.log(validEmail('@example.com'))      //FALSE
+// console.log(validEmail('john.smith@com'))    //FALSE
+// console.log(validEmail('john.smith@email.com')) //TRUE
+
+// console.log('===================================================')
+
+// function isItAnEmail(email) {
+//     let counter = 0,
+//         l = email.length;
+
+//     if (typeof email != 'string')
+//         return printResult('Enter a correct e-mail address!')
+//     else {
+//         for (i = 0; i < l; i++) {
+//             if (email[i] == '@') {
+//                 counter++;
+//             }
+//         }
+//         if (counter > 1)
+//             return printResult('Enter a correct e-mail address!');
+//         else {
+//             if (/*email.includes('@') &&*/ email.includes('.')) {
+//                 if (email.indexOf('@') > 0 && email.indexOf('.', email.indexOf('@')) > email.indexOf('@') + 1) {
+//                     if (email.slice(email.indexOf('@')+1).length >= 4) 
+//                         return printResult ('Valid e-mail address!')
+//                     else printResult ('Enter a correct e-mail address!')
+//                 } else return printResult('Enter a correct e-mail address!')
+//             } else return printResult('Enter a correct e-mail address!')
+//         }
+//     }
+// }
+
+// isItAnEmail('florian.buxgooglemail.');
+// console.log(isItAnEmail('john@example.com'))  //TRUE
+// console.log(isItAnEmail('@example.com'))      //FALSE
+// console.log(isItAnEmail('john.smith@com'))    //FALSE
+// console.log(isItAnEmail('john.smith@email.com')) //TRUE
