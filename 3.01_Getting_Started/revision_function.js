@@ -4,15 +4,15 @@
 // and it returns the age based on the current year 2019
 console.log('----------Task 1:');
 
-function printResult (res) {
+function printResult(res) {
     console.log(res);
 }
 
-function yourAge (yearBorn) {
+function yourAge(yearBorn) {
     var age,
         currentYear = 2019;
     age = currentYear - yearBorn;
-    return printResult (age);
+    return printResult(age);
 }
 
 yourAge(1983);
@@ -24,9 +24,9 @@ yourAge(1983);
 // false if it less than 10.
 console.log('----------Task 2:');
 
-function greaterTen (num) {
+function greaterTen(num) {
     // return printResult (num > 20 ? `${num} is GREATER than 10!` : `${num} is LESS than 10!`);
-    return printResult (num > 20 ? true : false);
+    return printResult(num > 20 ? true : false);
 }
 
 greaterTen(11);
@@ -41,24 +41,24 @@ console.log('----------Task 3:');
 // return 'okay' -> quality between 3 and 6
 // return 'not so okay' -> quality between 0 and 3
 
-function howIsWeather (quality) {
-    if (typeof quality != 'number' || quality > 10 || quality < 0) 
-        return printResult ('Input should be a number between 0 and 10!');
+function howIsWeather(quality) {
+    if (typeof quality != 'number' || quality > 10 || quality < 0)
+        return printResult('Input should be a number between 0 and 10!');
     else if (quality >= 0 && quality < 3)
-            return printResult ('not so okay');
+        return printResult('not so okay');
     else if (quality >= 4 && quality < 6)
-            return printResult ('okay');
+        return printResult('okay');
     else if (quality >= 6 && quality < 8)
-            return printResult ('good');    
+        return printResult('good');
     else if (quality >= 8 && quality <= 10)
-            return printResult ('great');
+        return printResult('great');
 }
 
-howIsWeather ('good');
-howIsWeather (12);
-howIsWeather (-1);
-howIsWeather (5);
-howIsWeather (10);
+howIsWeather('good');
+howIsWeather(12);
+howIsWeather(-1);
+howIsWeather(5);
+howIsWeather(10);
 
 console.log('----------Task 4:');
 
@@ -66,18 +66,18 @@ console.log('----------Task 4:');
 // invent one function with two parameters
 // that returns a string using the two parameters.
 
-function returnString (a, b) {
+function returnString(a, b) {
     // if (typeof a != 'string') {
     //     return printResult((a.toString()).concat(b));
     // } else return printResult(a.concat(b));
     return (typeof a != 'string') ? printResult((a.toString()).concat(b)) : printResult(a.concat(b));
 }
 
-returnString (1, 'ABBA');
+returnString(1, 'ABBA');
 
-returnString ('ABBA', 1)
+returnString('ABBA', 1)
 
-returnString (1, 1)
+returnString(1, 1)
 
 console.log('----------Task 5:');
 
@@ -88,7 +88,7 @@ console.log('----------Task 5:');
 //addUp(13) ➞ 91
 //addUp(600) ➞ 180300
 
-function addUp (num) {
+function addUp(num) {
     let res = 0;
     // for (i = 1; i <= num; i++) {
     //     res += i;
@@ -96,13 +96,13 @@ function addUp (num) {
     for (i = num; i >= 0; i--) {
         res += i;
     }
-    return printResult (res);
+    return printResult(res);
 }
 
-addUp (4);
-addUp (13);
-addUp (600);
-addUp ();
+addUp(4);
+addUp(13);
+addUp(600);
+addUp();
 
 console.log('----------Task 6:');
 
@@ -114,10 +114,10 @@ console.log('----------Task 6:');
 //lessThanOrEqualToZero(-4) ➞ true
 //lessThanOrEqualToZero(10) ➞ false
 
-function lessThanOrEqualToZero (num) {
+function lessThanOrEqualToZero(num) {
     // if num <= 0 return printResult(true)
     // else return printResult(false);
-    (num <= 0) ? printResult (true) : printResult (false);
+    (num <= 0) ? printResult(true): printResult(false);
 }
 
 
@@ -132,9 +132,9 @@ console.log('----------Task 7:');
 //Task:  Where's Waldo?
 //Create a function that takes a string and returns true if Waldo is found and false if he's not.
 
-function isWaldoHere (str) {
+function isWaldoHere(str) {
     // str.toLowerCase().includes('waldo') ? printResult (true) : printResult (false);
-    typeof str != 'string' ? printResult ('Not a STRING!') : str.toLowerCase().includes('waldo') ? printResult (true) : printResult (false);
+    typeof str != 'string' ? printResult('Not a STRING!') : str.toLowerCase().includes('waldo') ? printResult(true) : printResult(false);
 }
 
 //Examples:
@@ -143,27 +143,27 @@ isWaldoHere("I found you Waldo!") //➞ true
 isWaldoHere("is wally here?") //➞ false
 isWaldoHere("waldo is here") //➞ true
 
-isWaldoHere (12345);
-isWaldoHere (true);
+isWaldoHere(12345);
+isWaldoHere(true);
 
 console.log('----------Task 8:');
 
 //Task :
 //Write a JavaScript function that reverse a number.
 
-function reverseNumber (a) {
+function reverseNumber(a) {
     // if (typeof a != 'number' || Number.isInteger(a) != true) return printResult ('Not a integer number')
     // else {
     //     return printResult(a.toString().split('').reverse().join(''))
     // }
-    (typeof a != 'number' || Number.isInteger(a) != true) ? printResult ('Not a integer number') : printResult(a.toString().split('').reverse().join(''));
+    (typeof a != 'number' || Number.isInteger(a) != true) ? printResult('Not a integer number'): printResult(a.toString().split('').reverse().join(''));
 }
 
 //Sample Data and output:
 //Example x = 32243;
 //Expected Output: 34223
 
-reverseNumber (32243);
+reverseNumber(32243);
 
 
 console.log('==================================================================== Task 9')
@@ -222,13 +222,13 @@ console.log('===================================================================
 // console.log('=======================================================')
 // function getVowels(str) {
 //     var vowelsCount = 0;
-  
+
 //     //turn the input into a string
 //     str = str.toLowerCase();
 //   console.log(str.length)
 //     //loop through the str
 //     for (var i = 0; i < str.length; i++) {
-  
+
 //     //if a vowel, add to vowel count
 //       if  (str.charAt(i) == "a" || str.charAt(i) == "e" || str.charAt(i) == "i" || str.charAt(i) == "o" || str.charAt(i) == "u") {
 //         vowelsCount += 1;
@@ -272,7 +272,7 @@ console.log('===================================================================
 // function validEmail(email) {
 //       let monkeytail = '@';
 //       let dot= '.';
-      
+
 //       for(i=0; i<email.length; i++){
 //                 if(email.includes(monkeytail) && 
 //                     email.includes(dot) && 
@@ -322,3 +322,66 @@ console.log('===================================================================
 // console.log(isItAnEmail('@example.com'))      //FALSE
 // console.log(isItAnEmail('john.smith@com'))    //FALSE
 // console.log(isItAnEmail('john.smith@email.com')) //TRUE
+
+
+console.log('=================================================================== Task 10')
+
+//Task :
+//Write a JavaScript function which returns the n rows by n columns identity matrix.
+
+//Sample Output: Sample Output:
+//matrix(4);
+// 1
+// 0
+// 0
+// 0
+// ----------
+// 0
+// 1
+// 0
+// 0
+// ----------
+// 0
+// 0
+// 1
+// 0
+// ----------
+// 0
+// 0
+// 0
+// 1
+// ----------
+
+
+// function matrix(x) {
+
+//     for (var i = 0; i < x; i++) {
+//         for (var j = 0; j < x; j++)
+//         //     if (i == j)
+//         //         console.log(1);
+//         //     else
+//         //         console.log(0);
+//         // console.log('---------')
+//     }
+// }
+
+// matrix(4);
+
+
+function matrix(x) {
+    let arr;
+    for (var i = 0; i < x; i++) {
+        arr = '';
+        for (var j = 0; j < x; j++){
+         if(i==j) {
+             arr += '1';
+         } 
+         if(i!==j) {
+             arr += '0';
+         }
+    }
+    console.log(arr);
+}
+}
+
+matrix(4);
