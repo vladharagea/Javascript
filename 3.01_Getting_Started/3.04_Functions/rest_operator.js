@@ -16,3 +16,17 @@ function countArguments(...args)
 }
 
 countArguments('welcome', 'to', 'Earth');
+
+// Task : Pass all your personal info via function
+
+
+function personalInfo(firstName, lastName, birthDate, ...args){
+    var title = args[0];
+    var city = args[1];
+    var zip = args[2];
+    var country = args[3];
+
+    console.log(`${firstName} ${lastName}, birth date is ${birthDate}, he is a ${title},born in ${city}, ${zip}, in the ${country}`);
+}
+
+personalInfo('Geralt', 'of Rivia', 'unknown', 'witcher', 'Kaer-Morhen', '12486', 'Northern-Kingdoms')
