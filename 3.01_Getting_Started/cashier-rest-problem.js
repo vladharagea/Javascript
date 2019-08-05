@@ -177,6 +177,19 @@
 //     newAmount = .............
 
 
+
+    function monkeyInsideTheMachine(change, curr) {
+        if (change>=curr) {
+            amountOfNotes = Math.floor(change / curr);
+            change = parseFloat((change - curr).toFixed(2));
+            change = change % curr;
+            return change;
+        } 
+        else return change;
+
+
+    }
+
     cashier(2.12 , 50);
 
         function cashier(price, paid) {
@@ -185,100 +198,121 @@
             let change = parseFloat((paid - price).toFixed(2));
             console.log(change)
             console.log(`Price: ${price} \nPaid: ${paid} \nChange: ${change}`)
+        
+        //Check for twenties    
 
-            //Check twenties
-            let curr1 = 20
-            if (change >= curr1) {
-                amountOfNotes = Math.floor(change / curr1);
-                change = parseFloat((change - curr1).toFixed(2));
-                change = change % curr1;
-                console.log(`${amountOfNotes} x ${curr1}`)
-            }
+        let curr = 20;
+        monkeyInsideTheMachine(change, curr);
+        console.log(change)
+        amountOfNotes = Math.floor(change / curr);
+        console.log(`${amountOfNotes} X ${curr}`);
 
-            //Check the tens
 
-            let curr2 = 10
-            if (change >= curr2) {
-                amountOfNotes = Math.floor(change / curr2);
-                change = parseFloat((change - curr2).toFixed(2));
-                change = change % curr2;
-                console.log(`${amountOfNotes} x ${curr2}`)
-            }
+        // Check for tens
 
-            //Check the fives
+        curr = 10;
+        monkeyInsideTheMachine(change, curr);
+        amountOfNotes = Math.floor(change / curr);
+        console.log(`${amountOfNotes} X ${curr}`)
 
-            let curr3 = 5
-            if (change >= curr3) {
-                amountOfNotes = Math.floor(change / curr3);
-                change = parseFloat((change - curr3).toFixed(2));
-                change = change % curr3;
-                console.log(`${amountOfNotes} x ${curr3}`)
-            }
 
-            //Check for twos
 
-            let curr4 = 2
-            if (change >= curr4) {
-                amountOfNotes = Math.floor(change / curr4);
-                change = parseFloat((change - curr4).toFixed(2));
-                change = change % curr4;
-                console.log(`${amountOfNotes} x ${curr4}`)
-            }
 
-            //Check for ones
 
-            let curr5 = 1
-            if (change >= curr5) {
-                amountOfNotes = Math.floor(change / curr5);
-                change = parseFloat((change - curr5).toFixed(2));
-                change = change % curr5;
-                console.log(`${amountOfNotes} x ${curr5}`)
-            }
 
-            //Check for 50cents
+            // //Check twenties
+            // let curr1 = 20
+            // if (change >= curr1) {
+            //     amountOfNotes = Math.floor(change / curr1);
+            //     change = parseFloat((change - curr1).toFixed(2));
+            //     change = change % curr1;
+            //     console.log(`${amountOfNotes} x ${curr1}`)
+            // }
 
-            let curr6 = 0.50
-            if (change >= curr6) {
-                amountOfNotes = Math.floor(change / curr6);
-                change = parseFloat((change - curr1).toFixed(2));
-                change = change % curr6;
-                console.log(`${amountOfNotes} x ${curr6}`)
-            }
+            // //Check the tens
 
-            //Check for 20cents
+            // let curr2 = 10
+            // if (change >= curr2) {
+            //     amountOfNotes = Math.floor(change / curr2);
+            //     change = parseFloat((change - curr2).toFixed(2));
+            //     change = change % curr2;
+            //     console.log(`${amountOfNotes} x ${curr2}`)
+            // }
 
-            let curr7 = 0.20
-            if (change >= curr7) {
-                amountOfNotes = Math.floor(change / curr7);
-                change = change % curr7;
-                console.log(`${amountOfNotes} x ${curr7}`)
-            }
+            // //Check the fives
 
-            //Check for 5 cents
+            // let curr3 = 5
+            // if (change >= curr3) {
+            //     amountOfNotes = Math.floor(change / curr3);
+            //     change = parseFloat((change - curr3).toFixed(2));
+            //     change = change % curr3;
+            //     console.log(`${amountOfNotes} x ${curr3}`)
+            // }
 
-            let curr8 = 0.05
-            if (change >= curr8) {
-                amountOfNotes = Math.floor(change / curr8);
-                change = change % curr8;
-                console.log(`${amountOfNotes} x ${curr8}`)
-            }
+            // //Check for twos
 
-            //Check for 2 cents
+            // let curr4 = 2
+            // if (change >= curr4) {
+            //     amountOfNotes = Math.floor(change / curr4);
+            //     change = parseFloat((change - curr4).toFixed(2));
+            //     change = change % curr4;
+            //     console.log(`${amountOfNotes} x ${curr4}`)
+            // }
 
-            let curr9 = 0.02
-            if (change >= curr9) {
-                amountOfNotes = Math.floor(change / curr9);
-                change = change % curr9;
-                console.log(`${amountOfNotes} x ${curr9}`)
-            }
+            // //Check for ones
 
-            //Check for 1 cents
+            // let curr5 = 1
+            // if (change >= curr5) {
+            //     amountOfNotes = Math.floor(change / curr5);
+            //     change = parseFloat((change - curr5).toFixed(2));
+            //     change = change % curr5;
+            //     console.log(`${amountOfNotes} x ${curr5}`)
+            // }
 
-            let curr10 = 0.01
-            if (change >= curr10) {
-                amountOfNotes = Math.floor(change / curr10);
-                change = change % curr10;
-                console.log(`${amountOfNotes} x ${curr10}`)
-            }
+            // //Check for 50cents
+
+            // let curr6 = 0.50
+            // if (change >= curr6) {
+            //     amountOfNotes = Math.floor(change / curr6);
+            //     change = parseFloat((change - curr6).toFixed(2));
+            //     change = change % curr6;
+            //     console.log(`${amountOfNotes} x ${curr6}`)
+            // }
+
+            // //Check for 20cents
+
+            // let curr7 = 0.20
+            // if (change >= curr7) {
+            //     amountOfNotes = Math.floor(change / curr7);
+            //     change = change % curr7;
+            //     console.log(`${amountOfNotes} x ${curr7}`)
+            // }
+
+            // //Check for 5 cents
+
+            // let curr8 = 0.05
+            // if (change >= curr8) {
+            //     amountOfNotes = Math.floor(change / curr8);
+            //     change = change % curr8;
+            //     console.log(`${amountOfNotes} x ${curr8}`)
+            // }
+
+            // //Check for 2 cents
+
+            // let curr9 = 0.02
+            // if (change >= curr9) {
+            //     amountOfNotes = Math.floor(change / curr9);
+            //     change = change % curr9;
+            //     console.log(`${amountOfNotes} x ${curr9}`)
+            // }
+
+            // //Check for 1 cents
+
+            // let curr10 = 0.01
+            // if (change >= curr10) {
+            //     amountOfNotes = Math.floor(change / curr10);
+            //     change = change % curr10;
+            //     console.log(`${amountOfNotes} x ${curr10}`)
+            // }
         }
 
