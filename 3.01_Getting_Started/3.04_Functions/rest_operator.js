@@ -29,4 +29,5 @@ function personalInfo(firstName, lastName, birthDate, ...args){
     console.log(`${firstName} ${lastName}, birth date is ${birthDate}, he is a ${title},born in ${city}, ${zip}, in the ${country}`);
 }
 
-personalInfo('Geralt', 'of Rivia', 'unknown', 'witcher', 'Kaer-Morhen', '12486', 'Northern-Kingdoms')
+personalInfo('Geralt', 'of Rivia', 'unknown', 'witcher', 'Kaer-Morhen', '12486', 'Northern-Kingdoms');
+
