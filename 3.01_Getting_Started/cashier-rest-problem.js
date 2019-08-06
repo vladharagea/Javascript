@@ -186,8 +186,6 @@
             return change;
         } 
         else return change;
-
-
     }
 
     cashier(2.12 , 50);
@@ -203,7 +201,7 @@
 
         let curr = 20;
         monkeyInsideTheMachine(change, curr);
-        console.log(change)
+        console.log(change);
         amountOfNotes = Math.floor(change / curr);
         console.log(`${amountOfNotes} X ${curr}`);
 
