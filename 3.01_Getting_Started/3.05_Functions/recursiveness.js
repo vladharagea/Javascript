@@ -96,10 +96,14 @@ function printSumOfNum(n, num) {
     if(n == 0 ) return;
     
     printSumOfNum(n-1, num)
-    
 }
 
 printSumOfNum(3, 0)
+
+function sumOfNumbersFromOneToN(n) {
+    if (n == 1) return 1;
+    return n + sumOfNumbersFromOneToN(n-1)
+}
 
 console.log('====================================================================')
 // Write a recursive function that calculates the factorial of a number. Factorial of 5 is 5*4*3*2*1 = 120

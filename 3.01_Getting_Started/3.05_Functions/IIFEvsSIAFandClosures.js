@@ -30,7 +30,7 @@ function outer () {
 var X = outer() // X equals to whatever outer() returns X = inner()
 var Y = outer() // X equals to whatever outer() returns X = inner()
 console.log(X)
-console.dir(outer)
+console.dir(X)
 X(); // inner()
 X();
 X();

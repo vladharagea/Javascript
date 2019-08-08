@@ -65,12 +65,10 @@ function letterCapitalize(str, getCapitalize) {
 function getCapitalize(str) {
     var words = str.split(' ')
     for (i = 0; i < words.length; i++) {
-        words[i] = words[i][0].toUpperCase() + words[i].substr(1)
+        words[i] = words[i][0].toUpperCase() + words[i].substring(1)
     }
     return words.join(' ');
 }
-
-getCapitalize('i am a student of the dci')
 
 letterCapitalize('hello world', getCapitalize);
 letterCapitalize('i am a student of the dci', getCapitalize);
