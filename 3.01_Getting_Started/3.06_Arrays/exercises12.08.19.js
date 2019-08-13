@@ -192,6 +192,18 @@ function deleteDuplicates (arr) {
 }
 deleteDuplicates(nums);
 
+// function unique(arr) {
+//     uniqueArr = [];
+//     for (i = 0; i < arr.length; i++) {
+//         if (!uniqueArr.includes(arr[i])) {
+//             uniqueArr.push(arr[i])
+//         }
+//     }
+//     console.log(uniqueArr)
+// }
 
+// unique([3, 3, 3, 7, 3, 3]) //➞ 7
+// unique([0, 0, 0.77, 0, 0]) //➞ 0.77
+// unique([0, 1, 1, 1, 1, 1, 1, 1]) // ➞ 0
 
 

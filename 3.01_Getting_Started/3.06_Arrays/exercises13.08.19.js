@@ -44,18 +44,76 @@ console.log('---------------------')
 
 function toCamelCase(str) {
     str = str.split('_');
+    console.log(str)
     for (i = 1 ; i < str.length ; i++) {
-        str[i] = str[i].charAt(0).toUpperCase() + str[i].substring(1); 
+        str[i] = str[i].charAt(0).toUpperCase() + str[i].substring(1);
+        console.log(str[i]) 
     }
     console.log(str.join(""))  
 }
     
 toCamelCase("hello_world") //➞ "helloWorld"
-toCamelCase("javascript_is_fun")// ➞ "javaScriptIsFun"
+toCamelCase("javascript_is_fun")// ➞ "javascriptIsFun"
+console.log('-------------------------------------------------------------')
 
-var bla = 'hello_world'
-bla = bla.split('_')
-console.log(bla)
-bla = bla[0].split('')
-console.log(bla[0].toUpperCase())
+function toCamelCaseErwan (str) {
+    let arrform = str.split("");
+    for (let i = 0; i < arrform.length; i++) {
+        if(arrform[i] === '_'){
+            let capit = arrform[i+1].toUpperCase();
+            arrform.splice(i, 2, capit);
+        }
+    }
+    console.log(arrform.join(''));
+}
 
+toCamelCaseErwan("hello_world") //➞ "helloWorld"
+toCamelCaseErwan("javascript_is_fun")// ➞ "javascriptIsFun"
+
+
+console.log('---------------------------------------------------------------')
+
+// /Create a function that takes a string, checks if it has the same number of 'x's and 'o's and returns //either true or false.
+//* Return a boolean value (true or false).
+//* The string can contain any character.
+//* When neither an x nor an o is in the string, return true.
+//
+//Examples:
+//XO("ooxx") ➞ true
+//XO("xooxx") ➞ false
+//XO("ooxXm") ➞ true (case insensitive)
+//XO("zpzpzpp") ➞ true (returns true if no x and o)
+//XO("zzoo") ➞ false
+
+
+
+// function XO (str) {
+//     str = str.toLowerCase();
+//     return str.split('x').length == str.split('o').length ? true : false
+     
+// }
+
+// console.log(XO("ooxx")) //➞ true
+// console.log(XO("xooxx")) //➞ false
+// console.log(XO("ooxXm")) //➞ true (case insensitive)
+// console.log(XO("zpzpzpp")) //➞ true (returns true if no x and o)
+// console.log(XO("zzoo")) //➞ false
+
+
+function XO(str) {
+    var countX = 0;
+    var countO = 0;
+    str = str.toLowerCase();
+    for(let i = 0; i<str.length; i++){
+        if(str[i] === 'o') countO++;
+        if(str[i] === 'x') countX++;
+    }
+    return countO === countX;
+}
+
+
+console.log(XO("ooxx")) //➞ true
+console.log(XO("xooxx")) //➞ false
+console.log(XO("ooxXm")) //➞ true (case insensitive)
+console.log(XO("zpzpzpp")) //➞ true (returns true if no x and o)
+console.log(XO("zzoo")) //➞ false
