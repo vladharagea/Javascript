@@ -115,11 +115,11 @@ var supers = ['Homelander' , 'Maeve', 'Starlight']
 
 // 2. Make an array of your parents' names.
 
-var parents = ['Butcher', 'Mother\'s Milk', 'Frenchie']
+var goodGuys = ['Butcher', 'Mother\'s Milk', 'Frenchie']
 
 // 3. Combine these two arrays.
 
-var theBoys = supers.concat(parents) 
+var theBoys = supers.concat(goodGuys) 
 console.log(theBoys)
 
 // 4. Add your pets' names.
@@ -130,11 +130,11 @@ console.log(theBoys)
 
 console.log(theBoys.reverse())
 
-// 6. Access one of your parents' names.
+// 6. Access one of your goodGuys' names.
 
-console.log(parents[0])
+console.log(goodGuys[0])
 
-// 7. Update the name of one of your parents.
+// 7. Update the name of one of your goodGuys.
 
-parents[1] = 'Hughie';
-console.log(parents[1])
+goodGuys[1] = 'Hughie';
+console.log(goodGuys[1]);
