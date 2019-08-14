@@ -159,12 +159,14 @@ console.log('-----------------------------------------------------------------')
 
 
 // function dictionary(str, arr) {
-//     var NewArr = [];
+//     var newArr = [];
 //     for(let i = 0 ; i < arr.length; i++){
-//         if(arr[i].includes(str)) 
-//         NewArr.push(arr[i])
+//             let word = arr[i];
+//             let subWord = word.slice(0, str.length);
+//             if(subWord === str)
+//             newArr.push(word);
 //     }   
-//   console.log(NewArr)
+//   console.log(newArr)
 // }
 
 // dictionary("bu", ["button", "breakfast", "border"])// ➞ ["button"]
@@ -182,3 +184,77 @@ function dictionary(str, arr) {
 dictionary("bu", ["button", "breakfast", "border"]) // ➞ ["button"]
 dictionary("tri", ["triplet", "tries", "trip", "piano", "tree"]) // ➞ ["triplet", "tries", trip"]
 dictionary("beau", ["pastry", "delicious", "name", "boring"]) // ➞ []
+
+
+console.log('----------------------------------------------');
+
+// 9. Cubed
+// Create a function that takes in an array of numbers and returns the sum of its cubes.
+// Examples: 
+
+function sumOfCubes(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        cube = Math.pow(arr[i], 3);
+        sum += cube;
+    }
+    console.log(sum);
+}
+
+sumOfCubes([1, 5, 9]) //➞ 855   //// Since 1^3 + 5^3 + 9^3 = 1 + 125 + 729 = 855
+sumOfCubes([3, 4, 5]) //➞ 216
+sumOfCubes([2]) //➞ 8
+sumOfCubes([]) //➞ 0
+
+//**Note**
+//If given an empty array, return 0.
+
+console.log('------------------------------------------------------');
+
+// Write a function that recursively returns the number of vowels in a string.
+// Examples:
+// countVowels("apple") ➞ 2
+// countVowels("cheesecake") ➞ 5
+// countVowels("bbb") ➞ 0
+// countVowels("") ➞ 0
+// Notes:
+// All letters will be in lower case.
+// Vowels are: a, e, i, o, u.
+
+function countVowels(str) {
+    if (str.length == 0) return 0;
+    return ((['a', 'e', 'i', 'o', 'u'].includes(str.charAt(0))) ? 1 : 0) + countVowels(str.slice(1));
+}
+console.log(countVowels("apple"));
+console.log(countVowels("cheesecake"));
+console.log(countVowels("martini"));
+console.log(countVowels("rhythm"));
+console.log(countVowels(""));
+console.log(countVowels("b"));
+
+console.log('----------------------------------------------------------');
+
+
+//6. Even Number Generator
+// Create a function that finds all even numbers from 1 to the given number.
+
+// Examples:
+//   evenNums(8)// ➞ [2, 4, 6, 8] 
+//   evenNums(4)// ➞ [2, 4]
+//   evenNums(2)// ➞ [2]
+
+//If there are no even numbers, return an empty array.
+
+function evenNums(num) {
+    arr = [];
+    for (let i = 1; i <= num; i++) {
+        if (i % 2 == 0) {
+            arr.push(i);
+        }
+    }
+    console.log(arr)
+}
+
+evenNums(8) // ➞ [2, 4, 6, 8] 
+evenNums(4) // ➞ [2, 4]
+evenNums(2) // ➞ [2]
