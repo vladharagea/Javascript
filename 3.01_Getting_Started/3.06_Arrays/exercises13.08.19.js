@@ -17,23 +17,23 @@
 // unique([0, 1, 1, 1, 1, 1, 1, 1]) // ➞ 0
 
 //without indexOf and lastIndexOf 
-function finduniq2 (listes) {
+function finduniq2(listes) {
     let all_the_uniq = [];
     for (let i = 0; i < listes.length; i++) {
         let boll = 1;
         for (let j = 0; j < listes.length; j++) {
-            if (j===i) continue
+            if (j === i) continue
             else {
-                if (listes[i]!==listes[j]) boll *= 1
-                else boll *=0
-            }      
+                if (listes[i] !== listes[j]) boll *= 1
+                else boll *= 0
+            }
         }
-        if (boll===0) continue
+        if (boll === 0) continue
         else all_the_uniq.push(listes[i])
     }
     return all_the_uniq
 }
-console.log(finduniq2([33,2,5,4,4,8,3,13,2,33,4,5,6,11,12,7,546,3,-45,7,2,6,13,8,4,11]))
+console.log(finduniq2([33, 2, 5, 4, 4, 8, 3, 13, 2, 33, 4, 5, 6, 11, 12, 7, 546, 3, -45, 7, 2, 6, 13, 8, 4, 11]))
 
 
 console.log('---------------------')
@@ -45,22 +45,22 @@ console.log('---------------------')
 function toCamelCase(str) {
     str = str.split('_');
     console.log(str)
-    for (i = 1 ; i < str.length ; i++) {
+    for (i = 1; i < str.length; i++) {
         str[i] = str[i].charAt(0).toUpperCase() + str[i].substring(1);
-        console.log(str[i]) 
+        console.log(str[i])
     }
-    console.log(str.join(""))  
+    console.log(str.join(""))
 }
-    
+
 toCamelCase("hello_world") //➞ "helloWorld"
-toCamelCase("javascript_is_fun")// ➞ "javascriptIsFun"
+toCamelCase("javascript_is_fun") // ➞ "javascriptIsFun"
 console.log('-------------------------------------------------------------')
 
-function toCamelCaseErwan (str) {
+function toCamelCaseErwan(str) {
     let arrform = str.split("");
     for (let i = 0; i < arrform.length; i++) {
-        if(arrform[i] === '_'){
-            let capit = arrform[i+1].toUpperCase();
+        if (arrform[i] === '_') {
+            let capit = arrform[i + 1].toUpperCase();
             arrform.splice(i, 2, capit);
         }
     }
@@ -68,7 +68,7 @@ function toCamelCaseErwan (str) {
 }
 
 toCamelCaseErwan("hello_world") //➞ "helloWorld"
-toCamelCaseErwan("javascript_is_fun")// ➞ "javascriptIsFun"
+toCamelCaseErwan("javascript_is_fun") // ➞ "javascriptIsFun"
 
 
 console.log('---------------------------------------------------------------')
@@ -89,8 +89,8 @@ console.log('---------------------------------------------------------------')
 
 // function XO (str) {
 //     str = str.toLowerCase();
-//     return str.split('x').length == str.split('o').length ? true : false
-     
+//     return str.split('x').length == str.split('o').length
+
 // }
 
 // console.log(XO("ooxx")) //➞ true
@@ -100,20 +100,85 @@ console.log('---------------------------------------------------------------')
 // console.log(XO("zzoo")) //➞ false
 
 
-function XO(str) {
-    var countX = 0;
-    var countO = 0;
-    str = str.toLowerCase();
-    for(let i = 0; i<str.length; i++){
-        if(str[i] === 'o') countO++;
-        if(str[i] === 'x') countX++;
-    }
-    return countO === countX;
+// function XO(str) {
+//     var countX = 0;
+//     var countO = 0;
+//     str = str.toLowerCase();
+//     for(let i = 0; i<str.length; i++){
+//         if(str[i] === 'o') countO++;
+//         if(str[i] === 'x') countX++;
+//     }
+//     return countO === countX;
+// }
+
+
+// console.log(XO("ooxx")) //➞ true
+// console.log(XO("xooxx")) //➞ false
+// console.log(XO("ooxXm")) //➞ true (case insensitive)
+// console.log(XO("zpzpzpp")) //➞ true (returns true if no x and o)
+// console.log(XO("zzoo")) //➞ false
+
+
+function xO(str) {
+    console.log((str.length - str.replace(/x/ig, "").length) == (str.length - str.replace(/o/ig, "").length) ? true : false)
+}
+xO("ooxx");
+xO("xooxx");
+xO("ooxXm");
+xO("zpzpzpp");
+xO("zzoo");
+
+
+console.log('-----------------------------------------------------------------')
+
+//8. Dictionary
+//Create a function that takes in an initial word and filters out an array to contain words that start //with the same letters as the initial word.
+//
+//Examples
+//dictionary("bu", ["button", "breakfast", "border"]) ➞ ["button"]
+//dictionary("tri", ["triplet", "tries", "trip", "piano", "tree"]) ➞ ["triplet", "tries", trip"]
+//dictionary("beau", ["pastry", "delicious", "name", "boring"]) ➞ []
+//
+//**Notes**
+//* If none of the words match, return an empty array.
+//* Keep the filtered array in the same relative order as the original array of words.
+
+// function dictionary(str, arr) {
+//     var NewArr = [];
+//     for(let i = 0 ; i < arr.length; i++){
+//         if(arr[i] == str + arr[i].substring(str.length)){
+//             NewArr.push(arr[i])    
+//         }
+//     }   
+//   console.log(NewArr)
+// }
+
+// dictionary("bu", ["button", "breakfast", "border"])// ➞ ["button"]
+// dictionary("tri", ["triplet", "tries", "trip", "piano", "tree"])// ➞ ["triplet", "tries", trip"]
+// dictionary("beau", ["pastry", "delicious", "name", "boring"])// ➞ []
+
+
+// function dictionary(str, arr) {
+//     var NewArr = [];
+//     for(let i = 0 ; i < arr.length; i++){
+//         if(arr[i].includes(str)) 
+//         NewArr.push(arr[i])
+//     }   
+//   console.log(NewArr)
+// }
+
+// dictionary("bu", ["button", "breakfast", "border"])// ➞ ["button"]
+// dictionary("tri", ["triplet", "tries", "trip", "piano", "tree"])// ➞ ["triplet", "tries", trip"]
+// dictionary("beau", ["pastry", "delicious", "name", "boring"])// ➞ []
+
+function dictionary(str, arr) {
+
+    const result = arr.filter(element => element.includes(str))
+    console.log(result);
+
 }
 
 
-console.log(XO("ooxx")) //➞ true
-console.log(XO("xooxx")) //➞ false
-console.log(XO("ooxXm")) //➞ true (case insensitive)
-console.log(XO("zpzpzpp")) //➞ true (returns true if no x and o)
-console.log(XO("zzoo")) //➞ false
+dictionary("bu", ["button", "breakfast", "border"]) // ➞ ["button"]
+dictionary("tri", ["triplet", "tries", "trip", "piano", "tree"]) // ➞ ["triplet", "tries", trip"]
+dictionary("beau", ["pastry", "delicious", "name", "boring"]) // ➞ []
