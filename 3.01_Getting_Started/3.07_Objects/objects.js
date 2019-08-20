@@ -259,3 +259,8 @@
         console.log(item[1]);
     };
     console.log('==================');
+
+    for (const [fruits, count] of entries){
+        console.log(`There are ${fruits} ${count}`);
+    };
+    
