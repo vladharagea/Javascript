@@ -234,80 +234,80 @@ console.log('==============Exercise 8 Arrays===============');
 // 1. Leap Years
 // Write a program which finds the leap years in a given range of years.
 
-let years = [2400, 2500];
+// let years = [2400, 2500];
 
-function isItALeapYear(year) {
-    return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
-}
-function leapYears (start, end) {
-    let res = [];
-    for (i = start; i <= end; i++) {
-        if (isItALeapYear(i)) res.push(i);
-    }
-    return res;
-}
-console.log(leapYears(2400, 2510));
-
-
-
-
-// function leapYear(x, y) {
-//     for (i = years[0]; i <= years[1]; i++) {
-//         if (i % 4 !== 0 || i % 400 !== 0) {
-//             console.log('common');
-//         };
-//         if (i % 100 !==0){
-//             console.log(i);
-//         }
-//         else console.log(i);
+// function isItALeapYear(year) {
+//     return ((year % 4 == 0) && (year % 100 !== 0)) || (year % 400 == 0);
+// }
+// function leapYears (start, end) {
+//     let res = [];
+//     for (i = start; i <= end; i++) {
+//         if (isItALeapYear(i)) res.push(i);
 //     }
+//     return res;
+// }
+// console.log(leapYears(2400, 2510));
+
+
+
+
+// // function leapYear(x, y) {
+// //     for (i = years[0]; i <= years[1]; i++) {
+// //         if (i % 4 !== 0 || i % 400 !== 0) {
+// //             console.log('common');
+// //         };
+// //         if (i % 100 !==0){
+// //             console.log(i);
+// //         }
+// //         else console.log(i);
+// //     }
+// // }
+
+
+
+
+
+
+
+// console.log('========Exercise 9 Arrays=================');
+// // 2. First & Last
+// // Write a program that takes an array and returns the first and last elements as a new array.
+// // Expected Output:
+// // [5, 10, 15, 20, 25] ➞ [5, 25]
+// // ["javascript", 13, null, false, true] ➞ ["javascript", true]
+// // [undefined, 4, "6", "hello", null] ➞ [undefined, null]
+
+// function firstAndLastEl(arr) {
+//     let startNEnd = [];
+//     startNEnd.push(arr[0]);
+//     startNEnd.push(arr[arr.length-1]);
+//     console.log(startNEnd);
 // }
 
+// firstAndLastEl([5, 10, 15, 20, 25]);
+// firstAndLastEl(["javascript", 13, null, false, true]);
+// firstAndLastEl([undefined, 4, "6", "hello", null]);
 
+// console.log('=================Exercise 10 Arrays')
+// // 3. Find the Smallest Number
+// // Write a program that takes an array of numbers and returns the smallest number in the set.
+// // E.g
+// // [34, 15, 88, 2] ➞ 2
+// // [34, -345, -1, 100] ➞ -345
+// // [-76, 1.345, 1, 0] ➞ -76
+// // [0.4356, 0.8795, 0.5435, -0.9999] ➞ -0.9999
+// // [7, 7, 7] ➞ 7
 
+// function smallestNum(arr) {
+//     arr = arr.sort();
+//     console.log(arr);
+// }
 
-
-
-
-console.log('========Exercise 9 Arrays=================');
-// 2. First & Last
-// Write a program that takes an array and returns the first and last elements as a new array.
-// Expected Output:
-// [5, 10, 15, 20, 25] ➞ [5, 25]
-// ["javascript", 13, null, false, true] ➞ ["javascript", true]
-// [undefined, 4, "6", "hello", null] ➞ [undefined, null]
-
-function firstAndLastEl(arr) {
-    let startNEnd = [];
-    startNEnd.push(arr[0]);
-    startNEnd.push(arr[arr.length-1]);
-    console.log(startNEnd);
-}
-
-firstAndLastEl([5, 10, 15, 20, 25]);
-firstAndLastEl(["javascript", 13, null, false, true]);
-firstAndLastEl([undefined, 4, "6", "hello", null]);
-
-console.log('=================Exercise 10 Arrays')
-// 3. Find the Smallest Number
-// Write a program that takes an array of numbers and returns the smallest number in the set.
-// E.g
-// [34, 15, 88, 2] ➞ 2
-// [34, -345, -1, 100] ➞ -345
-// [-76, 1.345, 1, 0] ➞ -76
-// [0.4356, 0.8795, 0.5435, -0.9999] ➞ -0.9999
-// [7, 7, 7] ➞ 7
-
-function smallestNum(arr) {
-    arr = arr.sort();
-    console.log(arr);
-}
-
-smallestNum([34, 15, 88, 2]);
-smallestNum([34, -345, -1, 100]);
-smallestNum([-76, 1.345, 1, 0]);
-smallestNum([0.4356, 0.8795, 0.5435, -0.9999]);
-smallestNum([7, 7, 7]);
+// smallestNum([34, 15, 88, 2]);
+// smallestNum([34, -345, -1, 100]);
+// smallestNum([-76, 1.345, 1, 0]);
+// smallestNum([0.4356, 0.8795, 0.5435, -0.9999]);
+// smallestNum([7, 7, 7]);
 
 
 
@@ -327,3 +327,90 @@ smallestNum([7, 7, 7]);
 // spelling("bee") ➞ ["b", "be", "bee"]
 // spelling("happy") ➞ ["h", "ha", "hap", "happ", "happy"]
 // spelling("eagerly") ➞ ["e", "ea", "eag", "eage", "eager"]
+
+
+
+// 1. Leap Years
+// Write a program which finds the leap years in a given range of years.
+
+function findTheLepYear(arr) {
+    theLeapYears = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] % 4 === 0 && arr[i])
+            theLeapYears.push(arr[i])
+    }
+    console.log(theLeapYears)
+}
+
+findTheLepYear([1897, 1880, 1900, 1920, 1970,2000, 2001, 2008, 2009, 2019, 2020, 2035, 2040, 2043, 2050,2800])
+
+// 2. First & Last
+// Write a program that takes an array and returns the first and last elements as a new array.
+//[5, 10, 15, 20, 25] ➞ [5, 25]
+
+function turnFirstAndLastOneInArray(arr) {
+    turnedArr = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (i == 0 || i === arr.length - 1)
+            turnedArr.push(arr[i])
+    }
+    console.log(turnedArr)
+}
+turnFirstAndLastOneInArray([5, 10, 15, 20, 25])
+turnFirstAndLastOneInArray(["javascript", 13, null, false, true])
+turnFirstAndLastOneInArray([undefined, 4, "6", "hello", null])
+
+
+// 3. Find the Smallest Number
+// Write a program that takes an array of numbers and returns the smallest number in the set.
+// E.g
+// [34, 15, 88, 2] ➞ 2
+// [34, -345, -1, 100] ➞ -345
+// [-76, 1.345, 1, 0] ➞ -76
+// [0.4356, 0.8795, 0.5435, -0.9999] ➞ -0.9999
+// [7, 7, 7] ➞ 7
+
+
+function theSmallestOne(num) {
+    console.log(Math.min(...num))
+}
+theSmallestOne([34, 15, 88, 2])
+
+// 4. Return Student Names
+// Write a program that takes an array of students and returns an array of student names.
+// Example:
+// [ { name: "Steve"},
+//  { name: "Mike"},
+//  { name: "John"}
+// ]
+// ➞ ["Steve", "Mike", "John"]
+
+var students = {
+    a: "Steve",
+    b: "Mike",
+    c: "John"
+};
+const studentArr = Object.values(students)
+console.log(studentArr)
+
+// 5. Spell it out
+// Write a program which takes in a word and spells it out, by consecutively adding letters until the full word is completed.
+// E.g.
+// spelling("bee") ➞ ["b", "be", "bee"]
+// spelling("happy") ➞ ["h", "ha", "hap", "happ", "happy"]
+// spelling("eagerly") ➞ ["e", "ea", "eag", "eage", "eager"]
+
+function spellTheWord(word) {
+    let theWord=[];
+    word1 = "";
+    console.log(word)
+    for (let i = 0; i < word.length; i++) {
+        word1 += word[i]
+        theWord.push(word1)
+    }
+    console.log(theWord)
+
+}
+spellTheWord("bee")
+spellTheWord("happy")
+spellTheWord("eagerly")
