@@ -85,27 +85,57 @@ aboutJPObj.lastMovie = {
 console.log(aboutJPObj);
 
 console.log('================6. and 7.================');
+
 // 6. Add a function called updateLatestMovie that takes an object as an input and edits the lastMovie and the movies array.
-aboutJPObj.updateMovies = function(obj) {
-    let {title} = obj;
-    for (let item of this.movies) {
-        if (Object.values(item).includes(title))
+aboutJPObj.updateMovies = function (obj) {
+    //Teacher Solution
+
+    if (this.lastMovie.year < obj.year)
+        this.lastMovie = obj;
+
+    // Check if my array is empty
+    if (this.movies.length === 0)
+        this.movies.push(obj)
+
+    // Update the movies array
+    let t = obj.title;
+    for (let i = 0; i < this.movies.length; i++) {
+        if (this.movies[i].title === t)
             return;
+        else if (i == this.movies.length - 1) {
+            this.movies.push(obj)
+        }
     };
-    this.movies.push(obj);
- }
- aboutJPObj.updateLatestMovie = function(obj) {
+
+    // let {title} = obj;
+    // for (let item of this.movies) {
+    //     if (Object.values(item).includes(title))
+    //         return;
+    // };
+
+    // this.movies.push(obj);
+}
+aboutJPObj.updateLatestMovie = function (obj) {
     this.lastMovie = obj;
     this.updateMovies(obj);
- }
+}
 
- aboutJPObj.updateLatestMovie({title: 'Walk the line', year: 2005});
- aboutJPObj.updateLatestMovie({title: 'Gladiator', year: 2000});
- aboutJPObj.updateMovies({title: 'Walk the line', year: 2005});
- console.log(aboutJPObj);
+aboutJPObj.updateLatestMovie({
+    title: 'Walk the line',
+    year: 2005
+});
+aboutJPObj.updateLatestMovie({
+    title: 'Gladiator',
+    year: 2000
+});
+aboutJPObj.updateMovies({
+    title: 'Walk the line',
+    year: 2005
+});
+console.log(aboutJPObj);
 
- // 7. Update his lastMovie and movies using that function. Please avoid duplicates in the movie array. Use the below object to call updateLatestMovie.
- // {title: 'Walk the line', year: 2005}
+// 7. Update his lastMovie and movies using that function. Please avoid duplicates in the movie array. Use the below object to call updateLatestMovie.
+// {title: 'Walk the line', year: 2005}
 //  aboutJPObj.updateMovies = function(obj) {
 //      let {title} = obj;
 //      for (let item of this.movies) {
@@ -122,8 +152,8 @@ console.log(aboutJPObj);
 
 console.log('======================9.======================');
 
-aboutJPObj.updateOscarsCount = function() {
-    this.oscarsWon++; 
+aboutJPObj.updateOscarsCount = function () {
+    this.oscarsWon++;
 }
 
 aboutJPObj.updateOscarsCount();
@@ -138,19 +168,94 @@ console.log('=======================11.========================');
 
 // 11. Add a function called addMovies that will take an array of movies (please use the spread operator ...) and will add movies to the movies array.
 
-aboutJPObj.addMovies = function(...args) {
-    console.log(args);
-    for (let item of args){
-        this.updateMovies(item)
-    }
+aboutJPObj.addMovies = function (...args) {
+    //Simplest Solution
+    // for(let i = 0; i < arr.length; i++){
+    //     this.updateLatestMovie(arr[i]);
+    // };
+    //Best Solution
+    args.forEach(element => this.updateMovies(element));
 };
 
-aboutJPObj.addMovies([
-     {title: '8 mm', year: '1999'},
-     {title: 'Buffalo Soldiers', year: '2001'},
-     {title: 'Quills', year: '2000'}
-    ]);
+let movies = [{
+        title: '8 mm',
+        year: 1999
+    },
+    {
+        title: 'Buffalo Soldiers',
+        year: 2001
+    },
+    {
+        title: 'Quills',
+        year: 2000
+    }
+];
+
+aboutJPObj.addMovies(...movies);
+
+console.log(aboutJPObj);
+
+console.log('=================12.======================');
+
+let moreMovies = [{
+        title: 'The Village',
+        year: 2004
+    },
+    {
+        title: 'Buffalo Soldiers',
+        year: 2001
+    },
+    {
+        title: 'Signs',
+        year: 2002
+    },
+    {
+        title: 'Walk the line',
+        year: 2005
+    }
+];
+
+aboutJPObj.addMovies(...moreMovies);
 
 console.log(aboutJPObj);
 
 
+let someMoreMovies = [{
+        title: 'The Master',
+        year: 2012
+    },
+    {
+        title: 'Joker',
+        year: 2019
+    },
+    {
+        title: 'Inherent Vice',
+        year: 2014
+    },
+    {
+        title: 'Walk the line',
+        year: 2005
+    },
+    {
+        title: 'You Were Never Really Here',
+        year: 2017
+    },
+    {
+        title: 'The Immigrant',
+        year: 2013
+    }
+];
+
+aboutJPObj.addMovies(...someMoreMovies);
+
+console.log(aboutJPObj);
+
+console.log('=================13.======================');
+
+aboutJPObj.calculateNumberOfMovies = function () {
+    this.totalMovies = this.movies.length;
+}
+aboutJPObj.calculateNumberOfMovies();
+console.log(aboutJPObj);
+
+console.log('====================14.=======================');
