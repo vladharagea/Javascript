@@ -77,3 +77,4 @@ let res = addTwo(5, 20);
 let w = multiplyByFive(res);
 // multiplyByFive(addtwo(1, 5));
 console.log(w);
+
