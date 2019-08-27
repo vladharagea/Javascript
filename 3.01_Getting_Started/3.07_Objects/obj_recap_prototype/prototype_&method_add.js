@@ -178,103 +178,267 @@ console.log(testArr);
 
 console.log('================= MAP =================');
 
-// Map
+// // Map
 
-var arr1 = [2, 3 , 9, 16]; //index 0 ... 3
+// var arr1 = [2, 3 , 9, 16]; //index 0 ... 3
 
-//old way
+// //old way
 
-var temp = [];
-for(let i = 0; i < arr.length; i++) {
-    temp.push(arr[i] * 2);
-};
-console.log(temp);
+// var temp = [];
+// for(let i = 0; i < arr.length; i++) {
+//     temp.push(arr[i] * 2);
+// };
+// console.log(temp);
 
-//using array method
+// //using array method
  
-const result = arr1.map( x => x * 2);
-console.log(result);
+// const result = arr1.map( x => x * 2);
+// console.log(result);
 
-//with function defination
-var counter = 0;
-var newArr = arr1.map(myFunction); // arr1 : 2,3,9,16
-console.log(newArr);
-function myFunction(num) {
-    // console.log(counter);
-    // counter++;
-    return num * 10;
+// //with function defination
+// var counter = 0;
+// var newArr = arr1.map(myFunction); // arr1 : 2,3,9,16
+// console.log(newArr);
+// function myFunction(num) {
+//     // console.log(counter);
+//     // counter++;
+//     return num * 10;
+// };
+
+// //Example 3 
+// var persons = [
+//     {firstName : 'John', lastName : 'Doe'},
+//     {firstName : 'Jayne', lastName : 'Frye'},
+//     {firstName : 'Sabine', lastName : 'Ebert'}
+// ];
+
+// console.log(persons.map(getFullName));
+
+// function getFullName (item) {
+//     return [item.firstName, item.lastName].join(" ");
+// };
+
+// //Example 4 
+// //Using var arr1 = =[2, 3, 9, 16];
+// var x = arr1.map(Math.sqrt);
+// console.log(x);
+
+// console.log('============REDUCE============================');
+
+// //Reduce Method
+// //The reduce() method reduced the array to a single value.
+// //The reduce() method executes a provided function for each value of the array (from left to right)
+// //The return value of the function is stored in an accumulator(result/total).
+// //Note : reduce() does not execute the function for array elements without values
+// //Note : this method does not change the original array.
+
+// //array.reduce(function(total, currentValue, currentIndex, arr), initialValue);
+
+// var numbers = [50, 60, 70, 10];
+// var resultOut = numbers.reduce(myReduceFunc);
+// function myReduceFunc(total, num) {
+//     console.log(`Total : ${total} and Num : ${num}`);
+//     return total + num; // total = 50 +60  total = 110 +70  total = 180 + 10 = 190;
+// };
+
+// console.log(resultOut);
+
+// //Example 2
+// const euros = [29.76, 41.85, 46.5];
+
+// const average = euros.reduce((total, amount, index, array) => {
+//     console.log(`Total : ${total} and amount : ${amount}`);
+
+//     total += amount;
+
+//     console.log(`Total : ${total}`);
+
+//     if(index == array.length - 1)
+//         return total/array.length - 1;
+//     else return total;
+// });
+
+// console.log(average);
+
+// //Example 3
+
+// console.log('With adding Initial value...');
+
+// const averageAddInitial = euros.reduce((total, amount, index, array) => {
+//     console.log(`Total : ${total} and Amount : ${amount}`);
+
+//     total += amount;
+
+//     console.log(`Total : ${total}`);
+
+//     if(index == array.length - 1)
+//         return total/array.length;
+//     else 
+//         return total;
+// }, 0);
+
+// console.log(averageAddInitial);
+
+// // Example 4 [29.76, 41.85, 46.5];
+
+
+// console.log('With adding Initial value...');
+
+// const averageAddInitialArr = euros.reduce((total, amount, index, array) => {
+//     console.log(`Total : ${total} and Amount : ${amount}`);
+//     total.push(amount);
+
+//     if(index == array.length - 1){
+//         var average = 0, temp = [];
+//         for(i = 0; i < total.length; i++){
+//             console.log('i=>' + total[i]);
+//             average += total[i];
+//         }
+//         temp.push(average/array.length);
+//         return temp;
+//     }
+//     else return total;
+    
+// }, []);
+
+// console.log(averageAddInitial);
+
+//Example 5
+
+// const dataArr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+
+// const flatValues = dataArr.reduce((total, value) => {
+//     console.log(`Total : ${total} and value : ${value}`);
+//     return total.concat(value);
+// }, []);
+// console.log(flatValues);
+
+
+//Task 
+console.log('======================================================');
+//  const fruitBasket = ['banana', 'cherry', 'orange', 'apple', 'cherry', 'orange', 'apple', 'banana', 'cherry', 'orange', 'fig'];
+
+// const amountOfFruits = fruitBasket.reduce(function (basket, fruit) {
+//     // console.log(basket);
+//     if (fruit in basket) {    
+//     basket[fruit]++;
+//     }
+//     else basket[fruit] = 1;
+//     // (fruit in basket) ? basket[fruit]++ : basket[fruit] = 1;
+//     return basket;
+
+// }, {});
+
+// console.log(amountOfFruits);
+
+console.log('============Second Version============');
+
+// //Task 
+const fruitBasket = ['banana', 'cherry', 'orange', 'apple', 'cherry', 'orange', 'apple', 'banana', 'cherry', 'orange', 'fig'];
+// // Expected output: { banana: 2, cherry: 3, orange : 3, apple: 2, fig: 1}
+// function howManyOfFruits(fruits) {
+//  let fruitCounter = createFruitCounter(fruits);
+//  for (item of fruits) {
+//      console.log(item);
+//      fruitCounter[item]++;
+//  }
+//  return fruitCounter;
+// }
+// function createFruitCounter(fruits) {
+//  let fruitCounter = {};
+//  fruits.forEach(element => {
+//      if (!Object.keys(fruitCounter).includes(element)) fruitCounter[element] = 0;
+//  });
+//  console.log(fruitCounter);
+//  return fruitCounter;
+// }
+// function howManyOfFruits(arr) {
+//     result = arr.reduce((allFruits, fruit) => {
+//         (fruit in allFruits) ? allFruits[fruit]++: allFruits[fruit] = 1;
+//         return allFruits;
+//     }, {});
+//     return result;
+// // }
+// console.log(howManyOfFruits(fruitBasket));
+
+console.log('================Third Version================');
+
+// const calculateFruits = fruitBasket.reduce((total, value, index, array) => {
+//      total[value] = array.filter((v)=> (v === value)).length;
+//         return total;
+//     }, {});
+
+// console.log(calculateFruits);
+
+
+console.log('=====================Filter Array Method=====================');
+
+// The filter() method creates an array filled with all array elements that pass a test (provided as a function).
+//Note : filter() does not execute the function for array elements without values.
+//Note : filter() does not change the original array.
+
+// array.filter(function(currentValue, index, arr), thisValue);
+
+//Example 1, check adult age and return all ages which is greater than 18
+
+var ages =[32, 33, 16, 40];
+
+function checkAdult(age){
+    console.lof('age=>'+age);
+    return age >= 18;
 };
 
-//Example 3 
-var persons = [
-    {firstName : 'John', lastName : 'Doe'},
-    {firstName : 'Jayne', lastName : 'Frye'},
-    {firstName : 'Sabine', lastName : 'Ebert'}
-];
+//Example 2, get all event number
 
-console.log(persons.map(getFullName));
+// const number2 = [1, 3, 4, 6, 8, 9];
 
-function getFullName (item) {
-    return [item.firstName, item.lastName].join(" ");
-};
+// const filterValue = () => {
+//     return numbers2.filter(number => {
+//         return number % 2 == 0;
+//     });
+// };
 
-//Example 4 
-//Using var arr1 = =[2, 3, 9, 16];
-var x = arr1.map(Math.sqrt);
-console.log(x);
+// console.log(filterValue());
 
-console.log('============REDUCE============================');
+//Example 3, count fruits in basket
 
-//Reduce Method
-//The reduce() method reduced the array to a single value.
-//The reduce() method executes a provided function for each value of the array (from left to right)
-//The return value of the function is stored in an accumulator(result/total).
-//Note : reduce() does not execute the function for array elements without values
-//Note : this method does not change the original array.
+// var objTemp = {};
+// var tempArr = fruitBasket.filter((fruit) => {
+//     objTemp[fruit] = (objTemp[fruit] || 0) + 1;
+// });
 
-//array.reduce(function(total, currentValue, currentIndex, arr), initialValue);
+// console.log(objTemp);
 
-var numbers = [50, 60, 70, 10];
-var resultOut = numbers.reduce(myReduceFunc);
-function myReduceFunc(total, num) {
-    console.log(`Total : ${total} and Num : ${num}`);
-    return total + num; // total = 50 +60  total = 110 +70  total = 180 + 10 = 190;
-};
+const calculateFruits = fruitBasket.reduce((basketObj, fruitParam, index, array) => {
+    basketObj[fruitParam] = array.filter((fruit) => (fruit === fruitParam)).length;
+    return basketObj;
+}, {});
 
-console.log(resultOut);
+console.log(calculateFruits);
 
-//Example 2
-const euros = [29.76, 41.85, 46.5];
+//Example 4, Manipulate country data
 
-const average = euros.reduce((total, amount, index, array) => {
-    console.log(`Total : ${total} and amount : ${amount}`);
+// const data = [
+//     { country : 'China', population : 13799999.999999998 },
+//     { country : 'India', population : 13390000},
+//     { country : 'USA', population : 3257000},
+//     { country : 'Germany', population : 827900.000000000001}
+// ];
 
-    total += amount;
+//  let newData = data.filter(item => {
+//      return item.population < 900000;
+//  });
+//  console.log(newData);
 
-    console.log(`Total : ${total}`);
+//Task : Searching in an array using filter method
+//return all item who has 'al' inside.
+//output :  ['krunal', 'nehal','dhaval']
 
-    if(index == array.length - 1)
-        return total/array.length - 1;
-    else return total;
+const students = ['krunal', 'ankit', 'appdividend', 'nehal', 'dhaval'];
+
+let alNames = students.filter(item =>{
+    return item.includes('al');
 });
 
-console.log(average);
+console.log(alNames);
 
-//Example 3
-
-console.log('With adding Initial value...');
-
-const averageAddInitial = euros.reduce((total, amount, index, array) => {
-    console.log(`Total : ${total} and Amount : ${amount}`);
-
-    total += amount;
-
-    console.log(`Total : ${total}`);
-
-    if(index == array.length - 1)
-        return total/array.length;
-    else 
-        return total;
-}, 0);
-
-console.log(averageAddInitial);
